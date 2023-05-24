@@ -1,5 +1,6 @@
 <script>
 import Search from './components/Search.vue'
+import MovieList from './components/MovieList.vue'
 import axios from 'axios';
 import { store } from './store';
 
@@ -11,6 +12,7 @@ export default {
   },
   components: {
     Search,
+    MovieList,
   },
   methods: {
     getMovie() {
@@ -36,8 +38,12 @@ export default {
 </script>
 
 <template>
- <Search @performSearch="getMovie"/>
- <h1>{{ this.store.movieCatalog[0].title }}</h1>
+		
+ <Search @performSearch="getMovie()"/>
+
+ <MovieList />
+
+
  <!-- <img src="https://image.tmdb.org/t/p/w342/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg" alt=""> -->
 </template>
 
