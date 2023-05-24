@@ -22,6 +22,9 @@
         v-model="store.searchText"
         @keyup.enter="emitSearchEvent"
     >
+    <button @click="emitSearchEvent">
+        Cerca
+    </button>
 </template>
 
 <style>
