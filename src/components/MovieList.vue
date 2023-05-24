@@ -11,6 +11,9 @@
 </script>
 
 <template>
+
+    <h1>Film</h1>
+
     <div class="result" v-for="movie, i in store.movieCatalog">
        <div>
             Titolo: {{ this.store.movieCatalog[i].title }}
@@ -25,6 +28,7 @@
             Voto: {{ this.store.movieCatalog[i].vote_average }}
        </div>
     </div>
+    
 </template>
 
 <style>
