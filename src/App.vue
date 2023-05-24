@@ -1,4 +1,13 @@
-<script setup>
+<script>
+import { store } from './store';
+
+export default {
+	data() {
+		return {
+			store,
+		};
+	},
+}
 
 </script>
 
