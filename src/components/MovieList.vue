@@ -27,6 +27,7 @@
        <div>
             Voto: {{ this.store.movieCatalog[i].vote_average }}
        </div>
+       <img :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
     </div>
     
 </template>
