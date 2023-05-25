@@ -1,5 +1,4 @@
 <script>
-import Header from './components/Header.vue'
 import Search from './components/Search.vue'
 import MovieList from './components/MovieList.vue'
 import ShowList from './components/ShowList.vue'
@@ -13,7 +12,6 @@ export default {
 		};
   },
   components: {
-    Header,
     Search,
     MovieList,
     ShowList,
@@ -59,8 +57,6 @@ export default {
 </script>
 
 <template>
-
-<Header />
 		
  <Search @performSearch="getBoth()"/>
 
@@ -68,7 +64,7 @@ export default {
  <ShowList />
 
 
- <!-- <img src="https://image.tmdb.org/t/p/w342/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg" alt=""> -->
+
 </template>
 
 <style scoped>
