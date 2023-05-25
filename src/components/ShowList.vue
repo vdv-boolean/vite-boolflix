@@ -14,21 +14,21 @@
 
     <h1>Serie Tv</h1>
 
-    <div class="result" v-for="movie, i in store.showCatalog">
-       <div>
+    <ul class="result" v-for="movie, i in store.showCatalog">
+       <li>
             Titolo: {{ this.store.showCatalog[i].name }}
-       </div>
-       <div>
+       </li>
+       <li>
             Titolo originale: {{ this.store.showCatalog[i].original_name }}
-       </div>
-       <div>
+       </li>
+       <li>
             Lingua: {{ this.store.showCatalog[i].original_language }}
-       </div>
-       <div>
+       </li>
+       <li>
             Voto: {{ this.store.showCatalog[i].vote_average }}
-       </div>
+       </li>
        <img :src="this.store.imageLink + this.store.showCatalog[i].poster_path" alt="">
-    </div>
+    </ul>
     
 </template>
 

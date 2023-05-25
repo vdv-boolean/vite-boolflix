@@ -1,5 +1,5 @@
 <script>
-    import { store } from '../store';
+import { store } from '../store';
 
     export default {
         data() {
@@ -8,27 +8,28 @@
             };
         },
     }
+ 
 </script>
 
 <template>
 
     <h1>Film</h1>
 
-    <div class="result" v-for="movie, i in store.movieCatalog">
-       <div>
+    <ul class="result" v-for="movie, i in store.movieCatalog">
+       <li>
             Titolo: {{ this.store.movieCatalog[i].title }}
-       </div>
-       <div>
+       </li>
+       <li>
             Titolo originale: {{ this.store.movieCatalog[i].original_title }}
-       </div>
-       <div>
+       </li>
+       <li>
             Lingua: {{ this.store.movieCatalog[i].original_language }}
-       </div>
-       <div>
+       </li>
+       <li>
             Voto: {{ this.store.movieCatalog[i].vote_average }}
-       </div>
+       </li>
        <img :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
-    </div>
+    </ul>
     
 </template>
 
