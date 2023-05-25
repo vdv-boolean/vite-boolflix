@@ -18,35 +18,34 @@ export default {
   },
   methods: {
     getMovie() {
-    axios
-        .get(
-          "https://api.themoviedb.org/3/search/movie", {
-            params: {
-              api_key: "e99307154c6dfb0b4750f6603256716d",
-						  query: this.store.searchText,
-						
-					},
-        })
-        .then((response) => (this.store.movieCatalog = response.data.results));
-        console.log(this.store.movieCatalog)
+      axios
+          .get(
+            "https://api.themoviedb.org/3/search/movie", {
+              params: {
+                api_key: "e99307154c6dfb0b4750f6603256716d",
+                query: this.store.searchText,
+              
+            },
+          })
+          .then((response) => (this.store.movieCatalog = response.data.results));
      },
      getShow() {
-    axios
-        .get(
-          "https://api.themoviedb.org/3/search/tv", {
-            params: {
-              api_key: "e99307154c6dfb0b4750f6603256716d",
-						  query: this.store.searchText,
-						
-					},
-        })
-        .then((response) => (this.store.showCatalog = response.data.results));
-        console.log(this.store.showCatalog)
-     },
+      axios
+          .get(
+            "https://api.themoviedb.org/3/search/tv", {
+              params: {
+                api_key: "e99307154c6dfb0b4750f6603256716d",
+                query: this.store.searchText,
+              
+            },
+          })
+          .then((response) => (this.store.showCatalog = response.data.results));
+      },
      getBoth() {
       this.getMovie();
       this.getShow();
      }
+  
   },
   created() {
     this.getMovie();
