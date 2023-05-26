@@ -16,18 +16,18 @@
 
     <ul class="result" v-for="movie, i in store.showCatalog">
        <li>
-            Titolo: {{ this.store.showCatalog[i].name }}
+            Titolo: {{ store.showCatalog[i].name }}
        </li>
        <li>
-            Titolo originale: {{ this.store.showCatalog[i].original_name }}
+            Titolo originale: {{ store.showCatalog[i].original_name }}
        </li>
        <li>
-            Lingua: {{ this.store.showCatalog[i].original_language }}
+            Lingua: {{ store.showCatalog[i].original_language }}
        </li>
        <li>
-            Voto: {{ this.store.showCatalog[i].vote_average }}
+            Voto: {{ Math.ceil((this.store.showCatalog[i].vote_average) / 10 * 5) }}
        </li>
-       <img :src="this.store.imageLink + this.store.showCatalog[i].poster_path" alt="">
+       <img :src="store.imageLink + store.showCatalog[i].poster_path" alt="">
     </ul>
     
 </template>

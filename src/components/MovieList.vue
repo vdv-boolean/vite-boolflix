@@ -1,4 +1,5 @@
 <script>
+import Result from './Result.vue'
 import { store } from '../store';
 
     export default {
@@ -7,16 +8,20 @@ import { store } from '../store';
                 store,
             };
         },
-    }
+        components: {
+            Result,     
+        },
+     } 
  
 </script>
 
 <template>
 
     <h1>Film</h1>
+    
 
     <ul class="result" v-for="movie, i in store.movieCatalog">
-       <li>
+        <li>
             Titolo: {{ this.store.movieCatalog[i].title }}
        </li>
        <li>
@@ -26,7 +31,7 @@ import { store } from '../store';
             Lingua: {{ this.store.movieCatalog[i].original_language }}
        </li>
        <li>
-            Voto: {{ this.store.movieCatalog[i].vote_average }}
+            Voto: {{ Math.ceil((this.store.movieCatalog[i].vote_average) / 10 * 5) }}
        </li>
        <img :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
     </ul>
