@@ -19,8 +19,8 @@ import { store } from '../store';
 
     <h1>Film</h1>
     
-
-    <ul class="result" v-for="movie, i in store.movieCatalog">
+    <div class="result">
+        <ul class="info" v-for="movie, i in store.movieCatalog">
         <li>
             Titolo: {{ this.store.movieCatalog[i].title }}
        </li>
@@ -31,15 +31,33 @@ import { store } from '../store';
             Lingua: {{ this.store.movieCatalog[i].original_language }}
        </li>
        <li>
-            Voto: {{ Math.ceil((this.store.movieCatalog[i].vote_average) / 10 * 5) }}
+            Voto: 
+            <span
+                    v-for="star in Math.ceil((this.store.movieCatalog[i].vote_average) / 2)"
+                >
+                <i class="fa-solid fa-star"></i>
+            </span>
+            <span
+                    v-for="star in (5 - Math.ceil((this.store.movieCatalog[i].vote_average) / 2))"
+                >
+                <i class="fa-regular fa-star"></i>
+            </span>
        </li>
        <img :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
     </ul>
+    </div>
+    
     
 </template>
 
 <style>
-.result {
-    border: 1px solid black;
+  .info {
+    flex: 0 0 25%;
+    }
+    img {
+    border: 1px solid white;
+}
+li {
+    /* display: none; */
 }
 </style>
