@@ -43,7 +43,8 @@ import { store } from '../store';
                 <i class="fa-regular fa-star"></i>
             </span>
        </li>
-       <img :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
+       <img v-if="store.movieCatalog[i].poster_path" :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
+       <img v-else src="../assets/img/noimageavaiable.png" alt="">
     </ul>
     </div>
     
@@ -57,7 +58,16 @@ import { store } from '../store';
     img {
     border: 1px solid white;
 }
+ul {
+    width: 342px;
+    height: 513px;
+    margin-bottom: 1rem;
+}
 li {
+    display: none;
+}
+img {
     /* display: none; */
+    object-fit: fill;
 }
 </style>

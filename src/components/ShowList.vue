@@ -37,7 +37,8 @@
                 <i class="fa-regular fa-star"></i>
             </span>
        </li>
-       <img :src="store.imageLink + store.showCatalog[i].poster_path" alt="">
+       <img v-if="store.showCatalog[i].poster_path" :src="store.imageLink + store.showCatalog[i].poster_path" alt="">
+       <img v-else src="../assets/img/noimageavaiable.png" alt="">
     </ul>
     </div>
 
