@@ -59,14 +59,24 @@ export default {
 <template>
 		
  <Search @performSearch="getBoth()"/>
-
- <MovieList />
- <ShowList />
-
-
+  <main>
+    <MovieList />
+    <ShowList />
+  </main>
 
 </template>
 
-<style scoped>
+<style>
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  main {
+    background-color: #434343;
+  }
 </style>
+s
