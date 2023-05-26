@@ -76,7 +76,14 @@ export default {
   }
 
   main {
+    width: 100%;
+    margin: auto;
     background-color: #434343;
   }
+
+  .result {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 </style>
-s
