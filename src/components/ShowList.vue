@@ -15,31 +15,31 @@
     <h1>Serie Tv</h1>
     <div class="result">
         <ul class="info" v-for="movie, i in store.showCatalog">
-       <li>
-            Titolo: {{ store.showCatalog[i].name }}
-       </li>
-       <li>
-            Titolo originale: {{ store.showCatalog[i].original_name }}
-       </li>
-       <li>
-            Lingua: {{ store.showCatalog[i].original_language }}
-       </li>
-       <li>
-            Voto: 
-            <span
-                    v-for="star in Math.ceil((this.store.showCatalog[i].vote_average) / 2)"
-                >
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span
-                    v-for="star in (5 - Math.ceil((this.store.showCatalog[i].vote_average) / 2))"
-                >
-                <i class="fa-regular fa-star"></i>
-            </span>
-       </li>
-       <img v-if="store.showCatalog[i].poster_path" :src="store.imageLink + store.showCatalog[i].poster_path" alt="">
-       <img v-else src="../assets/img/noimageavaiable.png" alt="">
-    </ul>
+            <li>
+                    Titolo: {{ store.showCatalog[i].name }}
+            </li>
+            <li>
+                    Titolo originale: {{ store.showCatalog[i].original_name }}
+            </li>
+            <li>
+                    Lingua: {{ store.showCatalog[i].original_language }}
+            </li>
+            <li>
+                    Voto: 
+                    <span
+                            v-for="star in Math.ceil((this.store.showCatalog[i].vote_average) / 2)"
+                        >
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span
+                            v-for="star in (5 - Math.ceil((this.store.showCatalog[i].vote_average) / 2))"
+                        >
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+            </li>
+            <img v-if="store.showCatalog[i].poster_path" :src="store.imageLink + store.showCatalog[i].poster_path" alt="">
+            <img v-else src="../assets/img/noimageavaiable.png" alt="">
+        </ul>
     </div>
 
     

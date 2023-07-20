@@ -20,8 +20,10 @@ import { store } from '../store';
     <h1>Film</h1>
     
     <div class="result">
+        
         <ul class="info" v-for="movie, i in store.movieCatalog">
-        <li>
+            <div class="upper">
+                <li>
             Titolo: {{ this.store.movieCatalog[i].title }}
        </li>
        <li>
@@ -43,8 +45,13 @@ import { store } from '../store';
                 <i class="fa-regular fa-star"></i>
             </span>
        </li>
-       <img v-if="store.movieCatalog[i].poster_path" :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
+            </div>
+           
+            <div class="lower">
+                <img v-if="store.movieCatalog[i].poster_path" :src="this.store.imageLink + this.store.movieCatalog[i].poster_path" alt="">
        <img v-else src="../assets/img/noimageavaiable.png" alt="">
+            </div>
+      
     </ul>
     </div>
     
@@ -62,12 +69,35 @@ ul {
     width: 342px;
     height: 513px;
     margin-bottom: 1rem;
+    padding-inline: 0.5rem;
+    position: relative;
+   
 }
+.upper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+}
+
 li {
-    display: none;
+    /* display: none; */
+   list-style: none;
+}
+
+.lower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
 }
 img {
     /* display: none; */
+    height: 100%;
+    width: 100%;
     object-fit: fill;
+    
 }
 </style>

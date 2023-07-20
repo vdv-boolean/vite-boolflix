@@ -61,7 +61,7 @@ export default {
  <Search @performSearch="getBoth()"/>
   <main>
     <MovieList />
-    <ShowList />
+    <!-- <ShowList /> -->
   </main>
 
 </template>
@@ -84,6 +84,8 @@ export default {
   .result {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+
   }
 
 </style>
